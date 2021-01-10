@@ -1,0 +1,3 @@
+This is an example app to showcase how to scan for nearby bluetooth devices and keep track of them and their RSSI using 
+ionic framework, vue.js and capacitor. At the point of writing (Jan 2021), documentation on ionic+vue was somewhat 
+lacking, so i figured that this could be of use for some people. 

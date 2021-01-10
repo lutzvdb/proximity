@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">Main counter: {{counter}}<br />
+        <button v-on:click='inc'>Increase</button>
+        <br />
+        <lutzcomponent ref="reftest" lutzcomptestint="1"></lutzcomponent>
+    </div>
+
+    <script src="comp.vue"></script>
+    <script lang="ts">
+        const myApp = {
+            components: {
+                lutzcomponent
+            },
+            data() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                inc() {
+                    this.counter += 1;
+                    this.$refs.reftest.uebernommen = this.counter;
+                    this.$refs.reftest.lutzcomptest();
+                }
+            }
+        }
+        Vue.createApp(myApp).mount('#app');
+    </script>
+</body>
+</html>
